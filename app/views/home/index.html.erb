@@ -1,0 +1,20 @@
+<%= "Current using #{Apartment::Tenant.current} tenant." %>
+
+<br />
+<br />
+<br />
+Create a random ITEM
+
+<%= form_for @item, url: items_path, method: :post do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+<br />
+<br />
+Item list:
+<ul>
+  <% @items.each do |item| %>
+    <li><%= item.name %></li>
+  <% end %>
+</ul>
